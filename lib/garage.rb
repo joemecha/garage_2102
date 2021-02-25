@@ -14,21 +14,21 @@ class Garage
   end
 
   def all_cars
-    everything = customers.map do |customer, car|
-      customer.cars
-    end
-
     # require "pry"; binding.pry
-    # @customers.each do |owner| <-- ERROR
+    # customers.each do |owner| <-- ERROR
     #   owner.cars each do |car|
-    #     all_cars << car
+    #     @all_the_cars << car
     #   end
     # end
+
+    @all_cars = customers.map do |customer|
+      customer.cars
+    end
+    @all_cars = @all_cars.flatten
   end
 
   def cars_by_make
-  end
-
-  def oldest_cars
+    #out of time here
+    @all_cars
   end
 end
