@@ -7,5 +7,20 @@ class Owner
     @name = name
     @occupation = occupation
     @cars = []
-  end 
+  end
+
+  def buy(car_title)
+    info = {description: nil, year: nil}
+    array = car_title.split(" ")
+
+    info[:year] = array[0]
+    info[:description] = array[1..3].join
+    @cars << Car.new(info)
+  end
+
+  def vintage_cars
+    @cars.find_all do |car|
+      car.age >= 25
+    end
+  end
 end

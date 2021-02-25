@@ -24,6 +24,19 @@ class OwnerTest < Minitest::Test
   def test_buy_car
     @owner_1.buy('1967 Green Ford Mustang')
 
-    assert_equal [@car_1], @owner_1.cars 
+    assert_equal 1, @owner_1.cars.length
+
+    @owner_1.buy('2001 Silver BMW 3-Series')
+    @owner_1.buy('1963 Red Chevrolet Corvette')
+
+    assert_equal 3, @owner_1.cars.length
+  end
+
+  def test_vintage_cars
+    @owner_1.buy('1967 Green Ford Mustang')
+    @owner_1.buy('2001 Silver BMW 3-Series')
+    @owner_1.buy('1963 Red Chevrolet Corvette')
+
+    assert_equal 2, @owner_1.vintage_cars.length
   end
 end
