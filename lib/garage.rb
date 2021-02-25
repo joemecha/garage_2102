@@ -15,8 +15,8 @@ class Garage
 
   def all_cars
     # require "pry"; binding.pry
-    # customers.each do |owner| <-- ERROR
-    #   owner.cars each do |car|
+    # customers.each do |owner|
+    #   owner.cars each do |car| <--- TYPO!!!!!
     #     @all_the_cars << car
     #   end
     # end
