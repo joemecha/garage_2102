@@ -12,9 +12,8 @@ class Owner
   def buy(car_title)
     info = {description: nil, year: nil}
     array = car_title.split(" ")
-
     info[:year] = array[0]
-    info[:description] = array[1..3].join
+    info[:description] = array[1] + " " + array[2] + " " + array[3]
     @cars << Car.new(info)
   end
 
