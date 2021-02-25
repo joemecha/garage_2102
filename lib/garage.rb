@@ -1,10 +1,13 @@
 class Garage
   attr_reader :name,
-              :owners
+              :customers
 
   def initialize(name)
     @name = name
-    @owners = []
+    @customers = []
   end
 
-end 
+  def add_customer(owner)
+    @customers << owner
+  end 
+end

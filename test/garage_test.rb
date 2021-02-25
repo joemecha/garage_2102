@@ -29,8 +29,8 @@ class GarageTest < Minitest::Test
     @garage.add_customer(@owner_1)
     @garage.add_customer(@owner_2)
 
-    expected = [@owner1, @owner2]
+    expected = [@owner_1, @owner_2]
 
-    assert_equal expected, @garage.customers 
+    assert_equal expected, @garage.customers
   end
 end
