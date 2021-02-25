@@ -16,4 +16,14 @@ class OwnerTest < Minitest::Test
     assert_equal "Regina George", @owner_1.name
     assert_equal "Heiress", @owner_1.occupation
   end
+
+  def test_starts_with_no_cars
+    assert_equal [], @owner_1.cars
+  end
+
+  def test_buy_car
+    @owner_1.buy('1967 Green Ford Mustang')
+
+    assert_equal [@car_1], @owner_1.cars 
+  end
 end
