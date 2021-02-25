@@ -24,4 +24,13 @@ class GarageTest < Minitest::Test
   def test_it_has_attribute
     assert_equal "Totally Safe Parking", @garage.name
   end
+
+  def test_add_customers
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+
+    expected = [@owner1, @owner2]
+
+    assert_equal expected, @garage.customers 
+  end
 end
