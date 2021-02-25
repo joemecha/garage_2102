@@ -25,7 +25,8 @@ class OwnerTest < Minitest::Test
     @owner_1.buy('1967 Green Ford Mustang')
 
     assert_equal 1, @owner_1.cars.length
-
+    # How else can unnamed instances of objects be tested???
+    
     @owner_1.buy('2001 Silver BMW 3-Series')
     @owner_1.buy('1963 Red Chevrolet Corvette')
 

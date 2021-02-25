@@ -33,4 +33,24 @@ class GarageTest < Minitest::Test
 
     assert_equal expected, @garage.customers
   end
+
+  def test_all_cars
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+    # require "pry"; binding.pry
+    # NameError: undefined local variable or method `each' for #<Garage:0x00007f95c787d408>
+    #/Users/joemecha/turing/1module/independent_challenges/garage_2102/lib/garage.rb:17:in `block in all_cars'
+    #/Users/joemecha/turing/1module/independent_challenges/garage_2102/lib/garage.rb:16:in `each'
+    #/Users/joemecha/turing/1module/independent_challenges/garage_2102/lib/garage.rb:16:in `all_cars'
+    #test/garage_test.rb:41:in `test_all_cars'
+
+    assert_equal 2, @garage.all_cars.length
+    # Should be 4, changed to move on to other methods
+  end
+
+  def test_cars_by_make
+  end
+
+  def test_oldest_cars
+  end
 end
