@@ -53,6 +53,20 @@ class GarageTest < Minitest::Test
     @garage.add_customer(@owner_2)
 
     assert_equal 58, @garage.oldest_cars.first.age
-    assert_equal 3, @garage.oldest_cars.length 
+    assert_equal 3, @garage.oldest_cars.length
+  end
+
+  def test_owner_of_oldest_car
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+
+    assert_equal "Glen Coco", @garage.owner_of_oldest_car
+  end
+
+  def test_cars_in_range
+    @garage.add_customer(@owner_1)
+    @garage.add_customer(@owner_2)
+
+    assert_equal 3, @garage.cars_in_range(1967..2020).length 
   end
 end

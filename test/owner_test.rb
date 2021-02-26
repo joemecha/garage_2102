@@ -32,7 +32,7 @@ class OwnerTest < Minitest::Test
     # test option 1
     assert_equal "Chevrolet", @owner_1.cars.last.make
 
-    # test option 2 
+    # test option 2
     # car_1 = @owner_1.buy('1967 Green Ford Mustang')
     # car_2 = @owner_1.buy('2001 Silver BMW 3-Series')
     # car_3 = @owner_1.buy('1963 Red Chevrolet Corvette')
@@ -45,6 +45,6 @@ class OwnerTest < Minitest::Test
     @owner_1.buy('2001 Silver BMW 3-Series')
     @owner_1.buy('1963 Red Chevrolet Corvette')
 
-    assert_equal 2, @owner_1.vintage_cars.length
+    assert_equal 2, @owner_1.vintage_cars.length 
   end
 end
