@@ -10,7 +10,7 @@ class Owner
   end
 
   def buy(car_title)
-    info = {description: nil, year: nil}
+    info = {}
     array = car_title.split(" ")
     info[:year] = array[0]
     info[:description] = array[1] + " " + array[2] + " " + array[3]
