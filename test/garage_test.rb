@@ -9,12 +9,12 @@ class GarageTest < Minitest::Test
     @garage = Garage.new("Totally Safe Parking")
 
     @owner_1 = Owner.new('Regina George', 'Heiress')
-    @owner_1.buy('1967 Green Ford Mustang')
-    @owner_1.buy('2001 Blue Ford Escape')
+    @car_1 = @owner_1.buy('1967 Green Ford Mustang')
+    @car_2 = @owner_1.buy('2001 Blue Ford Escape')
 
     @owner_2 = Owner.new('Glen Coco', 'Unknown')
-    @owner_2.buy('1963 Green Chevrolet Corvette')
-    @owner_2.buy('2020 Silver Volvo XC90')
+    @car_3 = @owner_2.buy('1963 Green Chevrolet Corvette')
+    @car_4 = @owner_2.buy('2020 Silver Volvo XC90')
   end
 
   def test_it_exists
@@ -67,6 +67,6 @@ class GarageTest < Minitest::Test
     @garage.add_customer(@owner_1)
     @garage.add_customer(@owner_2)
 
-    assert_equal 3, @garage.cars_in_range(1967..2020).length 
+    assert_equal 3, @garage.cars_in_range(1967..2020).length
   end
 end

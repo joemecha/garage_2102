@@ -68,7 +68,7 @@ class Garage
 
   def cars_in_range(range)
     all_cars.find_all do |car|
-      range.include?(car.year)
+      range.include?(car.year.to_i)
     end
   end
 end

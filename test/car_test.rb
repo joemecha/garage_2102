@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/car'
+require 'mocha/minitest'
 
 class CarTest < Minitest::Test
   def setup
@@ -16,6 +17,12 @@ class CarTest < Minitest::Test
     assert_equal "Mustang", @car_1.model
     assert_equal "Green", @car_1.color
     assert_equal "1967", @car_1.year
-    assert_equal 54, @car_1.age
+  end
+
+  def test_it_can_get_age
+    Time.stubs(:now).returns(Time.new(1977, 01, 12)) # Refactor with stub
+    # Now test will pass in 2022, 2023, 2050, etc.
+
+    assert_equal 10, @car_1.age
   end
 end

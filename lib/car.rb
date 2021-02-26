@@ -8,10 +8,10 @@ class Car
     @make = info[:description].split(" ")[1]
     @model = info[:description].split(" ")[2]
     @color = info[:description].split(" ")[0]
-    @year = info[:year].to_i
+    @year = info[:year]
   end
 
   def age
-    Time.now.year - @year
+    Time.now.year - @year.to_i
   end
 end
